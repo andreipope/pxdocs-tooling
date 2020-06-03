@@ -541,7 +541,9 @@ $(function() {
 
   */
   $(window).scroll( function() {
-    console.log('scroll')
+    if (window.location.pathname == '/kubernetes/' || window.location.pathname == '/other-orchestrators/') {
+      return
+    }
     var headerHeight = $('.docs-header').height()
     var windowHeight = $(document).height()
     var scrolledVal = $(document).scrollTop().valueOf()
